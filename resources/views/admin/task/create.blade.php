@@ -6,6 +6,7 @@
 
     <div class="container-xl">
         <div class="card">
+
             <task-form
                 :action="'{{ url('admin/tasks') }}'"
                 v-cloak
