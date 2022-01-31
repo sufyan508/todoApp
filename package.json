@@ -22,6 +22,8 @@
     },
     "dependencies": {
         "@babel/core": "^7.16.12",
+        "font-awesome-picker": "^2.0.0",
+        "ngx-icon-picker": "^1.8.0",
         "one-colorpicker": "^1.0.12",
         "vue-icon-picker": "^1.0.0",
         "vuedraggable": "^2.24.3"
