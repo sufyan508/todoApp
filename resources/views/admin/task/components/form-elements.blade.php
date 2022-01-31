@@ -5,12 +5,15 @@
         <div v-if="errors.has('label')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('label') }}</div>
     </div>
 </div>
-
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('color'), 'has-success': fields.color && fields.color.valid }">
     <label for="color" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.task.columns.color') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <input type="text" v-model="form.color" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('color'), 'form-control-success': fields.color && fields.color.valid}" id="color" name="color" placeholder="{{ trans('admin.task.columns.color') }}">
-        <div v-if="errors.has('color')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('color') }}</div>
+            <div id="app"><App/></div>
+            {{--            <color-panel v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('color'), 'form-control-success': fields.color && fields.color.valid}" id="color" name="color" placeholder="{{ trans('admin.task.columns.color') }}" v-model="form.color"></color-panel>--}}
+{{--            <color-picker  v-model="form.color" @change="change"></color-picker>--}}
+
+            <div v-if="errors.has('color')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('color') }}</div>
     </div>
 </div>
 
@@ -25,7 +28,7 @@
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('due_date'), 'has-success': fields.due_date && fields.due_date.valid }">
     <label for="due_date" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.task.columns.due_date') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
-        <input type="text" v-model="form.due_date" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('due_date'), 'form-control-success': fields.due_date && fields.due_date.valid}" id="due_date" name="due_date" placeholder="{{ trans('admin.task.columns.due_date') }}">
+        <input type="date" v-model="form.due_date" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('due_date'), 'form-control-success': fields.due_date && fields.due_date.valid}" id="due_date" name="due_date" placeholder="{{ trans('admin.task.columns.due_date') }}">
         <div v-if="errors.has('due_date')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('due_date') }}</div>
     </div>
 </div>
