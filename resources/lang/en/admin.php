@@ -30,5 +30,26 @@ return [
         ],
     ],
 
+    'task' => [
+        'title' => 'Tasks',
+
+        'actions' => [
+            'index' => 'Tasks',
+            'create' => 'New Task',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'label' => 'Label',
+            'color' => 'Color',
+            'icon' => 'Icon',
+            'due_date' => 'Due date',
+            'description' => 'Description',
+            're_order' => 'Re order',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];
