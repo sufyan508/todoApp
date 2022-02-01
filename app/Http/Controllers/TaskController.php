@@ -14,7 +14,7 @@ class TaskController extends Controller
     {
         // get all data from tasks table
         $data = Task::all();
-        return view('admin.task.index', ['data' => $data]);
+        return response(['data' => $data]);
     }
 
     public function storeTask(Request $request)
