@@ -55,7 +55,7 @@ class TaskController extends Controller
 //        check user is logging in
         $user=Auth::user();
         if ($user) {
-            $task = Task::whereId('$taskId')->delete();
+            $task = Task::whereId($taskId)->delete();
             return response(['message' => 'Task deleted Successfully!']);
         }
         else{
