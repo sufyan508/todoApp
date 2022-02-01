@@ -39,7 +39,8 @@
     <label for="icon" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.task.columns.icon') }}</label>
     <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         {{--        <font-awesome-picker v-on:selectIcon="yourFunction"></font-awesome-picker>--}}
-        <input type="text" v-model="form.icon" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('icon'), 'form-control-success': fields.icon && fields.icon.valid}" id="icon" name="icon" placeholder="{{ trans('admin.task.columns.icon') }}">
+        <vue-icon-picker v-model="form.icon" v-validate="'required'" id="icon" name="icon" placeholder="{{ trans('admin.task.columns.icon') }}"></vue-icon-picker>
+{{--        <input type="text" v-model="form.icon" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('icon'), 'form-control-success': fields.icon && fields.icon.valid}" id="icon" name="icon" placeholder="{{ trans('admin.task.columns.icon') }}">--}}
         {{--        <font-awesome-picker v-model="form.icon" v-validate="'required'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('icon'), 'form-control-success': fields.icon && fields.icon.valid}" id="icon" name="icon" placeholder="{{ trans('admin.task.columns.icon') }}"></font-awesome-picker>--}}
         <div v-if="errors.has('icon')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('icon') }}</div>
     </div>

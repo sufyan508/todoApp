@@ -1,6 +1,7 @@
 import AppForm from "../app-components/Form/AppForm";
 import { ColorPicker, ColorPanel } from "one-colorpicker";
 import { fontAwesomePicker } from "font-awesome-picker";
+import VueIconPicker from "vue-icon-picker";
 
 Vue.use(ColorPanel);
 Vue.use(ColorPicker);
@@ -25,4 +26,5 @@ Vue.component("task-form", {
         };
     },
     "font-awesome-picker": fontAwesomePicker,
+    "vue-icon-picker": VueIconPicker,
 });
