@@ -6,7 +6,7 @@ use App\Http\Requests\Admin\Task\DestroyTask;
 use App\Models\Task;
 use Exception;
 use Illuminate\Http\Request;
-
+use Auth;
 class TaskController extends Controller
 {
 
@@ -52,8 +52,8 @@ class TaskController extends Controller
 
     public function destroy($taskId)
     {
-        $user=10;
-//        $user=Auth::user()->id;
+//        $user=10;
+        $user=Auth::user();
         if ($user) {
             $task = Task::whereId('$taskId')->delete();
             return response(['message' => 'Task deleted Successfully!']);
