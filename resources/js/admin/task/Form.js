@@ -2,6 +2,7 @@ import AppForm from "../app-components/Form/AppForm";
 import { ColorPicker, ColorPanel } from "one-colorpicker";
 import { fontAwesomePicker } from "font-awesome-picker";
 import VueIconPicker from "vue-icon-picker";
+import $ from "jquery";
 
 Vue.use(ColorPanel);
 Vue.use(ColorPicker);
@@ -9,7 +10,7 @@ Vue.use(ColorPicker);
 Vue.component("task-form", {
     methods: {
         yourFunction(selectedIcon) {
-            console.log('selected', selectedIcon)
+            console.log("selected", selectedIcon);
         },
     },
     mixins: [AppForm],

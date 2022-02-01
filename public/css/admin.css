@@ -20998,3 +20998,8 @@ div.trumbowyg-dropdown-table table td.active {
     font-size: 0.875rem !important;
   }
 }
+.color-block{
+    min-width: 32px !important;
+    width:100% !important;
+    height: 100% !important;
+}

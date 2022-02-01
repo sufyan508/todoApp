@@ -3,9 +3,17 @@
 @section('title', trans('admin.task.actions.create'))
 
 @section('body')
-
+    <style>
+        .card-block{
+            min-width: 32px !important;
+            width:100%;
+            height: 100% !important;
+        }
+    </style>
     <div class="container-xl">
         <div class="card">
+
+
 
             <task-form
                 :action="'{{ url('admin/tasks') }}'"

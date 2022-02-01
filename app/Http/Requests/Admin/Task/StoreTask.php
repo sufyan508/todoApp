@@ -28,7 +28,7 @@ class StoreTask extends FormRequest
         return [
             'label' => ['required', 'string'],
             'color' => ['required', 'string'],
-            'icon' => ['nullable'],
+            'icon' => ['required', 'string'],
             'due_date' => ['required', 'string'],
             'description' => ['required', 'string'],
             're_order' => ['nullable', 'integer'],
