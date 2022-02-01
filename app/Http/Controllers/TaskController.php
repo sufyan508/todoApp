@@ -52,7 +52,7 @@ class TaskController extends Controller
 
     public function destroy($taskId)
     {
-//        $user=10;
+//        check user is logging in
         $user=Auth::user();
         if ($user) {
             $task = Task::whereId('$taskId')->delete();
