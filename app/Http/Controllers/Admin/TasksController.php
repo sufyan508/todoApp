@@ -16,6 +16,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
@@ -188,5 +189,35 @@ class TasksController extends Controller
         });
 
         return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
+    }
+
+    public function storeTask(Request $request)
+    {
+        $validator = $this->validate($request, [
+            'label' => 'required',
+            'color' => 'required',
+            'icon' => 'required',
+            'due_date' => 'required',
+            'description' => 'required',
+        ]);
+        try {
+            if ($validator) {
+                $task = new Task();
+                $task->label = $request->label;
+                $task->color = $request->color;
+                $task->description = $request->description;
+                $task->due_date = $request->due_date;
+                $task->icon = json_encode($request->icon);
+                $task->save();
+                return response(['message' => 'Task added successfully']);
+            } else {
+                return response(['message' => 'Task not added!']);
+            }
+        }
+        catch (Exception $e)
+        {
+            return response(['message' => 'Something went wrong!']);
+
+        }
     }
 }
