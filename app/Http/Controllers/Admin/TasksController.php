@@ -79,8 +79,8 @@ class TasksController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
+        $sanitized['icon']=json_encode($sanitized['icon']);
 
-        // Store the Task
         $task = Task::create($sanitized);
 
         if ($request->ajax()) {

@@ -17,7 +17,7 @@ class Tasks extends Migration
             $table->increments('id');
             $table->string('label',150);
             $table->string('color',100);
-            $table->string('icon');
+            $table->text('icon');
             $table->string('due_date');
             $table->text('description');
             $table->integer('re_order')->nullable();
