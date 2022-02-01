@@ -28,11 +28,11 @@ class UpdateTask extends FormRequest
         return [
             'label' => ['sometimes', 'string'],
             'color' => ['sometimes', 'string'],
-            'icon' => ['sometimes', 'string'],
+            'icon' => ['sometimes'],
             'due_date' => ['sometimes', 'string'],
             'description' => ['sometimes', 'string'],
             're_order' => ['nullable', 'integer'],
-            
+
         ];
     }
 

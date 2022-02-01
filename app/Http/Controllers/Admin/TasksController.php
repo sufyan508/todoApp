@@ -37,14 +37,19 @@ class TasksController extends Controller
         $data = AdminListing::create(Task::class)->processRequestAndGet(
             // pass the request with params
             $request,
-
             // set columns to query
             ['id', 'label', 'color', 'icon', 'due_date', 're_order'],
-
             // set columns to searchIn
             ['id', 'label', 'color', 'icon', 'due_date', 'description']
         );
-
+        foreach ($data as $query) {
+            $query->icon = json_decode($query->icon,true);
+            if (is_array($query->icon))
+            {
+                $query->icon=$query->icon['name'];
+            }
+        }
+//        dd($data);
         if ($request->ajax()) {
             if ($request->has('bulk')) {
                 return [
@@ -133,6 +138,7 @@ class TasksController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
+        $sanitized['icon']=json_encode($sanitized['icon']);
 
         // Update changed values Task
         $task->update($sanitized);
