@@ -2,17 +2,17 @@
 
 <p align="center"><a href="https://laravel.com" target="_blank">Composer update</a></p>
 
-<p align="center">copy .env.example .env</p>
+<p align="">copy .env.example .env</p>
 
-<p align="center">php artisan key:generate</p>
+<p align="">php artisan key:generate</p>
     
-<p align="center">composer update</p>
+<p align="">composer update</p>
     
-<p align="center">php artisan migrate</p>
+<p align="">php artisan migrate</p>
     
-<p align="center">npm install</p>
+<p align="">npm install</p>
     
-<p align="center">npm run dev</p>
+<p align="">npm run dev</p>
     
-<p align="center"><a href="https://laravel.com" target="_blank">php artisan serve</a></p>
+<p align=""><a href="#" target="_blank">php artisan serve</a></p>
 
