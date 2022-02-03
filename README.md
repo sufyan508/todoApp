@@ -1,4 +1,4 @@
-<p align="center"><a href=https://github.com/sufyan508/todoApp/" target="_blank">Larvel With Vue.js dragable color picker todoApp</a></p>
+<p align="center"><a href=https://github.com/sufyan508/todoApp/" target="_blank">Laravel With Vue.js dragable color picker todoApp</a></p>
 
 <p align="center"><a href="https://laravel.com" target="_blank">Composer update</a></p>
 
